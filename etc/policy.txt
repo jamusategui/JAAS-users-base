@@ -1,0 +1,17 @@
+grant codebase "file:./bin/*" {
+   permission javax.security.auth.AuthPermission "createLoginContext.Simple";
+   permission javax.security.auth.AuthPermission "modifyPrincipals";
+   permission javax.security.auth.AuthPermission "doAsPrivileged";
+   permission java.io.FilePermission "./etc/shadow", "read";	
+   permission java.io.FilePermission "./etc/passwd", "read";	
+};
+
+grant codebase "file:./bin/*", Principal mistic.id.SimplePrincipal "user" {
+	permission java.io.FilePermission "./etc/users", "read";
+};
+
+grant codebase "file:./bin/*", Principal Simple "admin" {
+	permission java.io.FilePermission "./etc/admin", "read";
+};
+
+

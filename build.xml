@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ID MISTIC PRAC1 EX1" default="compile" basedir=".">
+  <property name="src" location="src"/>
+  <property name="bin" location="bin"/>
+  <property name="lib" location="lib"/>
+  <property name="etc" location="etc"/>
+  <property name="doc" location="doc"/>
+
+
+  <fileset id="lib.jars" dir="${lib}">
+    <include name="**/*.jar"/>
+  </fileset>
+
+  <path id="compile.path">
+    <fileset refid="lib.jars"/>
+  </path>
+
+  <target name="compile" description="Compile the source files">
+    <mkdir dir="${bin}"/>
+    <mkdir dir="${lib}"/>
+    <javac srcdir="${src}" destdir="${bin}" includeAntRuntime="no"
+           classpathref="compile.path"/>
+  </target>
+
+	  <target name="run1" description="" depends="compile">
+	    <java classname="mistic.id.exv" fork="true" failonerror="true">
+	      	<jvmarg value="-Djava.security.manager"/>
+		<jvmarg value="-Djava.security.auth.login.config=${etc}/login.conf"/>
+		<jvmarg value="-Djava.security.policy=${etc}/policy.txt"/>	
+		<arg value="-op"/>
+		<arg value="store"/>
+		<arg value="-login"/>
+		<arg value="user1"/>
+		<arg value="-passwd"/>
+		<arg value="mistic2014"/>
+	     <classpath>
+	        <path refid="compile.path"/>
+	        <pathelement location="${bin}"/>
+	      </classpath>
+	    </java>
+	  </target>
+	
+	  <target name="run2" description="" depends="compile">
+	    <java classname="mistic.id.exv" fork="true" failonerror="true">
+	      	<jvmarg value="-Djava.security.manager"/>
+		<jvmarg value="-Djava.security.auth.login.config=${etc}/login.conf"/>
+		<jvmarg value="-Djava.security.policy=${etc}/policy.txt"/>	
+		<arg value="-op"/>
+		<arg value="store"/>
+		<arg value="-login"/>
+		<arg value="user1"/>
+		<arg value="-passwd"/>
+		<arg value="mistic2140"/>
+	     <classpath>
+	        <path refid="compile.path"/>
+	        <pathelement location="${bin}"/>
+	      </classpath>
+	    </java>
+	  </target>
+
+	  <target name="run3" description="" depends="compile">
+	    <java classname="mistic.id.exv" fork="true" failonerror="true">
+	      	<jvmarg value="-Djava.security.manager"/>
+		<jvmarg value="-Djava.security.auth.login.config=${etc}/login.conf"/>
+		<jvmarg value="-Djava.security.policy=${etc}/policy.txt"/>	
+		<arg value="-op"/>
+		<arg value="read"/>
+		<arg value="-login"/>
+		<arg value="user1"/>
+		<arg value="-passwd"/>
+		<arg value="mistic2014"/>
+	     <classpath>
+	        <path refid="compile.path"/>
+	        <pathelement location="${bin}"/>
+	      </classpath>
+	    </java>
+	  </target>
+	  
+	<target name="run4" description="" depends="compile">
+	    <java classname="mistic.id.exv" fork="true" failonerror="true">
+	      	<jvmarg value="-Djava.security.manager"/>
+		<jvmarg value="-Djava.security.auth.login.config=${etc}/login.conf"/>
+		<jvmarg value="-Djava.security.policy=${etc}/policy.txt"/>	
+		<arg value="-op"/>
+		<arg value="read"/>
+		<arg value="-login"/>
+		<arg value="user1"/>
+		<arg value="-passwd"/>
+		<arg value="mistic014"/>
+	     <classpath>
+	        <path refid="compile.path"/>
+	        <pathelement location="${bin}"/>
+	      </classpath>
+	    </java>
+	  </target>
+
+	<target name="run5" description="" depends="compile">
+	    <java classname="mistic.id.exv" fork="true" failonerror="true">
+	      	<jvmarg value="-Djava.security.manager"/>
+		<jvmarg value="-Djava.security.auth.login.config=${etc}/login.conf"/>
+		<jvmarg value="-Djava.security.policy=${etc}/policy.txt"/>	
+		<arg value="-op"/>
+		<arg value="store"/>
+		<arg value="-login"/>
+		<arg value="user2"/>
+		<arg value="-passwd"/>
+		<arg value="citsim2014"/>
+	     <classpath>
+	        <path refid="compile.path"/>
+	        <pathelement location="${bin}"/>
+	      </classpath>
+	    </java>
+	  </target>
+
+	<target name="run6" description="" depends="compile">
+	    <java classname="mistic.id.exv" fork="true" failonerror="true">
+	      	<jvmarg value="-Djava.security.manager"/>
+		<jvmarg value="-Djava.security.auth.login.config=${etc}/login.conf"/>
+		<jvmarg value="-Djava.security.policy=${etc}/policy.txt"/>	
+		<arg value="-op"/>
+		<arg value="store"/>
+		<arg value="-login"/>
+		<arg value="user2"/>
+		<arg value="-passwd"/>
+		<arg value="citsim214"/>
+	     <classpath>
+	        <path refid="compile.path"/>
+	        <pathelement location="${bin}"/>
+	      </classpath>
+	    </java>
+	  </target>
+	
+	<target name="run7" description="" depends="compile">
+	    <java classname="mistic.id.exv" fork="true" failonerror="true">
+	      	<jvmarg value="-Djava.security.manager"/>
+		<jvmarg value="-Djava.security.auth.login.config=${etc}/login.conf"/>
+		<jvmarg value="-Djava.security.policy=${etc}/policy.txt"/>	
+		<arg value="-op"/>
+		<arg value="read"/>
+		<arg value="-login"/>
+		<arg value="user2"/>
+		<arg value="-passwd"/>
+		<arg value="citsim2014"/>
+	     <classpath>
+	        <path refid="compile.path"/>
+	        <pathelement location="${bin}"/>
+	      </classpath>
+	    </java>
+	  </target>
+
+	<target name="run8" description="" depends="compile">
+	    <java classname="mistic.id.exv" fork="true" failonerror="true">
+	      	<jvmarg value="-Djava.security.manager"/>
+		<jvmarg value="-Djava.security.auth.login.config=${etc}/login.conf"/>
+		<jvmarg value="-Djava.security.policy=${etc}/policy.txt"/>	
+		<arg value="-op"/>
+		<arg value="read"/>
+		<arg value="-login"/>
+		<arg value="user2"/>
+		<arg value="-passwd"/>
+		<arg value="citsim214"/>
+	     <classpath>
+	        <path refid="compile.path"/>
+	        <pathelement location="${bin}"/>
+	      </classpath>
+	    </java>
+	  </target>
+
+  <target name="clean" description="Remove the build folder">
+    <delete dir="${bin}"/>
+  </target>
+</project>
